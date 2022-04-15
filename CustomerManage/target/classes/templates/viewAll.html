@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+	<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>	
+		<h2 style="text-align:center;text-style:bold;font-size:50px">Customer Portal</h2>
+		
+		<div style="padding:30px">
+		<table class="table table-success table-striped">
+		<thead>
+		<tr>
+			
+			<th> First Name</th>
+			<th> Last Name</th>
+			<th> Date Of Birth</th>
+			<th> Age</th>
+			<th> Gender</th>
+			<th> Location</th>
+			<th> Nationality</th>
+			<th> Age-Group</th>
+			
+			
+			
+			
+			
+		</tr>
+		
+		
+		</thead>
+		 <tbody>
+  	
+  		
+      <tr  th:each="customer,group : ${custList }"  >
+		<td th:text="${customer.firstName}">First Name</td>
+		<td th:text="${customer.lastName}">Last Name</td>
+		<td th:text="${customer.dob}">Date of Birth</td>
+		
+		
+		<td th:text="${customer.age}">Age</td>
+		<td th:text="${customer.gender}">Gender</td>
+		<td th:text="${customer.location}">Location</td>
+		<td th:text="${customer.nationality}">Nationality</td>
+		<td th:text="${groupList[group.index].ageGroup}">Age Group</td>
+		
+		
+		
+  
+  </tbody>
+  
+</table>
+</div>
+		
+</body>
+</html>
+

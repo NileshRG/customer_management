@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<h2 style="text-align:center;text-style:bold;font-size:50px">Customer Portal</h2>
+<div style="margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;margin-top:80px;">
+<form action="#"  th:action="@{/saveCustomer}" method="POST">
+  <div class="form-row">
+    
+	    <div class="form-group col-md-6" th:object="${customer}">
+	      <label class="form-label">First Name</label>
+	      <input type="text" th:field="*{firstName}" class="form-control" placeholder="First Name">
+	    </div>
+	    
+	    <div class="form-group col-md-6" th:object="${customer}">
+	      <label class="form-label">Last Name</label>
+	      <input type="text" th:field="*{lastName}" class="form-control" placeholder="Last Name">
+	    </div>
+    
+   </div>
+   <div class="form-row">
+   
+   		 <div class="form-group col-md-6" th:object="${customer}">
+	      <label class="form-label">Date Of Birth</label>
+	      <input type="date" th:field="*{dob}" class="form-control" placeholder="Date Of Birth">
+	    </div>
+	    
+	     <div class="form-group col-md-6" th:object="${customer}">
+	      <label class="form-label">Age </label>
+	      <input type="number" th:field="*{age}" class="form-control" placeholder="Age">
+	    </div>
+    
+    
+    
+	    
+    
+    </div>
+    <div class="form-row">
+    	<div class="form-group col-md-6" th:object="${customer}">
+	      <label class="form-label">Location </label>
+	      <input type="text" th:field="*{location}" class="form-control" placeholder="Location">
+	    </div>
+	    
+	    <div class="form-group col-md-6" th:object="${customer}">
+	      <label class="form-label"> Gender </label>
+	      <input type="text" th:field="*{gender}" class="form-control" placeholder="Gender">
+	    </div>
+    
+    
+    	
+    </div>
+    <div class="form-row">
+    	<div class="form-group col-md-6" th:object="${customer}">
+	      <label class="form-label">Nationality</label>
+	      <input type="text" th:field="*{nationality}" class="form-control" placeholder="Nationality">
+	    </div>
+	    
+	    
+    </div>
+    
+     
+  
+ 
+  <div class="col-md-12 text-center">
+  <button type="submit" class="btn btn-primary ">Submit</button>
+  </div>
+</form>
+</div>
+
+
+</body>
+</html>
